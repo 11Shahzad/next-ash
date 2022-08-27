@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+    background-color: #7A99B0;
+    font-family: "Mezalia";
+    text-decoration-skip-ink: none;
+}
+
+
+@font-face {
+    font-family: "FoundersGroteskMono";
+    src: url(../fonts/FoundersGroteskMono-Light.otf);
+  }@font-face {
+    font-family: "Mezalia";
+    src: url(../fonts/Arrière-garde\ -\ Mezalia\ Extra\ Bold.otf);
+  }
+  input[type=email]{
+font-family: "FoundersGroteskMono";
+  }
+  
+  .mezalia {
+    font-family: "Mezalia";
+  }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      background: transparent;
+      bottom: 0;
+      color: transparent;
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+  }
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+cursor: pointer;
+   opacity: 0;
+margin-right: -33px;
+   
+
+}
+input[type=number]{
+  background-image: url(../public/Vector.png);
+  
+
+}
