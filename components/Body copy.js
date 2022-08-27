@@ -35,10 +35,8 @@ const Body = () => {
 
   if (typeof window !== 'undefined') {
     useEffect(() => {
-      console.log(time)
       if (time || s || !a) {
         clearTimeout(time);
-console.log(time,a,s)
       }
     })
     s = sessionStorage.getItem('open')
@@ -66,7 +64,6 @@ console.log(time,a,s)
   const add = () => dispatch(addbooking({ adult, child, room, arrive, depart }))
   function update() {
     if (room > 10 || !room || p / room > 3 || !adult || room > adult && !child || adult / room > 2 || !arrivaldate || !departuredate) {
-      console.log('error')
     }
     else {
       add()
@@ -115,7 +112,6 @@ console.log(time,a,s)
     else {
       setTimeout(() => {
 
-        console.log(array)
         alert('Your ' + room + (room > 1 ? ' Rooms ' : ' Room ') + ' will be available for ' + adult + (adult > 1 ? ' Adults ' : ' Adult ') + (!child ? "" : ' and ' + child + (child > 1 ? ' Children ' : ' Child ')) + 'from ' + arrive + ' till ' + depart)
         router.push(`${[link]}?Adults=${adult}&Children=${child}&rooms=${room}&Arrivaldate=${arrive}&departuredate=${depart}`)
         // setRoom('')

@@ -7,7 +7,6 @@ import moment from "moment";
 const Body = () => {
   const dispatch = useDispatch();
   const array = useSelector((state) => state.availability);
-  console.log(array)
   const today = new Date().toISOString().slice(0, 10);
   const [adult, setAdult] = useState("");
   const [child, setChild] = useState("");
@@ -21,7 +20,6 @@ const Body = () => {
   const [a, setA] = useState(true);
   const [b, setB] = useState(false);
   const [c, setC] = useState(false);
-  console.log(max)
   const router = useRouter();
   var time;
   var s;
@@ -66,7 +64,6 @@ const Body = () => {
       !arrivaldate ||
       !departuredate
     ) {
-      console.log("error");
     } else {
       add();
       setC(true);
@@ -118,7 +115,6 @@ const Body = () => {
       );
     } else {
       setTimeout(() => {
-        console.log(array);
         alert(
           "Your " +
             room +
@@ -134,11 +130,7 @@ const Body = () => {
             " till " +
             depart
         );
-        console.log(
-          `http://google.com/search?q=Adults=${adult}${
-            !child ? "" : "+Children="
-          }${child}+rooms=${room}+Arrivaldate=${arrive}+departuredate=${depart}`
-        );
+      
         setRoom("");
         setAdult("");
         setChild("");
@@ -258,7 +250,7 @@ const Body = () => {
               value={arrivaldate}
               onChange={(e) => setArrivaldate(e.target.value)}
               type="date"
-              min={max}
+              min={today}
             />
           </div>{" "}
           <div className=" flex justify-between">
@@ -271,7 +263,6 @@ const Body = () => {
               onChange={(e) => setDeparturedate(e.target.value)}
               type="date"
               min={arrivaldate}
-              max={max}
             />
           </div>
         </div>
